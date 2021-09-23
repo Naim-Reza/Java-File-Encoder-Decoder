@@ -17,12 +17,14 @@ public class TextToImage {
             //convert to a byte array
             byte[] imgDataByte = new byte[dataArray.length];
             for (int i = 0; i < dataArray.length; i++) imgDataByte[i] = Byte.parseByte(dataArray[i]);
-
+            reader.close();
+            
             //write the data to the output file
             File outputFile = new File(imgOutputFileName);
             if (!outputFile.exists()) outputFile.createNewFile();
             BufferedOutputStream writer = new BufferedOutputStream(new FileOutputStream(outputFile));
             writer.write(imgDataByte);
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
