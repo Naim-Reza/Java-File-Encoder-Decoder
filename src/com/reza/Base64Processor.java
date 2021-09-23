@@ -23,6 +23,8 @@ public class Base64Processor {
 
             //write file to a text file
             this.writeToText(fileName, encodedString);
+            //close stream
+            reader.close();
 
         } catch (FileNotFoundException e){
             e.printStackTrace();
@@ -46,6 +48,7 @@ public class Base64Processor {
 
             //write to a image file
             this.writeToImage(fileName,imgData);
+            reader.close();
 
         } catch (FileNotFoundException e){
             e.printStackTrace();
@@ -73,6 +76,7 @@ public class Base64Processor {
         try{
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(file));
             stream.write(bytes);
+            stream.close();
         } catch (FileNotFoundException e){
             e.printStackTrace();
         } catch (IOException e){
