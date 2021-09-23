@@ -24,6 +24,16 @@ public class Main {
         //convert the text file to image file
         textToImage.convert(textInputFile, imgOutputFileName, separator);
 
+        //use of base64 encoding
+        String base64OutputFileName = "cat_out_base64";
+        Base64Processor base64Processor = new Base64Processor();
+
+        //encode the image file and saves as a text file
+        base64Processor.encode(inputFile, base64OutputFileName);
+
+        //decode base64 encoded file and save as image
+        base64Processor.decode(base64OutputFileName);
+
 
     }
 }
