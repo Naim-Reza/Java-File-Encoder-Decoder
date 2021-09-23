@@ -47,7 +47,7 @@ public class Base64Processor {
             byte[] imgData = Base64.getDecoder().decode(dataString);
 
             //write to a image file
-            this.writeToImage(fileName,imgData);
+            this.writeToBinary(fileName,imgData);
             reader.close();
 
         } catch (FileNotFoundException e){
@@ -69,7 +69,7 @@ public class Base64Processor {
         }
     }
 
-    private void writeToImage(String fileName, byte[] bytes){
+    private void writeToBinary(String fileName, byte[] bytes){
         String outputFileName = fileName + imgExt;
         File file = new File(outputFileName);
 

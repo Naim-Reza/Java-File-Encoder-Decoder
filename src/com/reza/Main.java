@@ -5,24 +5,24 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args) {
-        ImageToText imageToText = new ImageToText();
+        Encoder encoder = new Encoder();
         File inputFile = new File("cat.jpg");
         String outputFileName = "cat_out.txt";
 
         //take the image file and convert it to string
-        String convertedString = imageToText.convertToString(inputFile);
+        String convertedString = encoder.convertToString(inputFile);
 
         //write the string to a file
-        imageToText.writeFile(outputFileName, convertedString);
+        encoder.writeFile(outputFileName, convertedString);
 
         //convert the text file- 2nd part
         File textInputFile = new File(outputFileName);
         String imgOutputFileName = "cat_out.jpg";
         String separator = ":";
-        TextToImage textToImage = new TextToImage();
+        Decoder decoder = new Decoder();
 
         //convert the text file to image file
-        textToImage.convert(textInputFile, imgOutputFileName, separator);
+        decoder.convert(textInputFile, imgOutputFileName, separator);
 
         //use of base64 encoding
         String base64OutputFileName = "cat_out_base64";

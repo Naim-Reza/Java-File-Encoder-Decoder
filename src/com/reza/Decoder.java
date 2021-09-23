@@ -2,7 +2,7 @@ package com.reza;
 
 import java.io.*;
 
-public class ToImage {
+public class Decoder {
     private String imgDataString = "";
 
     public void convert(File inputFIle, String imgOutputFileName, String separator) {

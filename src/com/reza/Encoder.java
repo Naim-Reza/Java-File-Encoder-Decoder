@@ -2,7 +2,7 @@ package com.reza;
 
 import java.io.*;
 
-public class ToText {
+public class Encoder {
     private String encodedString = "";
 
     public String convertToString(File inputFile) {
