@@ -8,10 +8,10 @@ public class ImageToText {
 
     public String convertToString(File inputFile) {
         try{
-            FileInputStream fileInputStream = new FileInputStream(inputFile);
+            BufferedInputStream reader = new BufferedInputStream(new FileInputStream(inputFile));
             int fileSize = (int) inputFile.length();
             byte[] imageData = new byte[fileSize];
-            fileInputStream.read(imageData);
+            reader.read(imageData);
             for (int i = 0; i < imageData.length; i++) encodedString += (Byte.toString(imageData[i]) + ":");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
