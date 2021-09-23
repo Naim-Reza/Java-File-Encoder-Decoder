@@ -11,7 +11,6 @@ public class Main {
 
         //take the image file and convert it to string
         String convertedString = imageToText.convertToString(inputFile);
-        System.out.println(convertedString);
 
         //write the string to a file
         imageToText.writeFile(outputFileName, convertedString);
