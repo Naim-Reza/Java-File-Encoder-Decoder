@@ -15,5 +15,15 @@ public class Main {
         //write the string to a file
         imageToText.writeFile(outputFileName, convertedString);
 
+        //convert the text file- 2nd part
+        File textInputFile = new File(outputFileName);
+        String imgOutputFileName = "cat_out.jpg";
+        String seperetor = ":";
+        TextToImage textToImage = new TextToImage();
+
+        //convert the text file to image file
+        textToImage.convert(imgOutputFileName, seperetor);
+
+
     }
 }
