@@ -18,11 +18,11 @@ public class Main {
         //convert the text file- 2nd part
         File textInputFile = new File(outputFileName);
         String imgOutputFileName = "cat_out.jpg";
-        String seperetor = ":";
+        String separator = ":";
         TextToImage textToImage = new TextToImage();
 
         //convert the text file to image file
-        textToImage.convert(imgOutputFileName, seperetor);
+        textToImage.convert(textInputFile, imgOutputFileName, separator);
 
 
     }
