@@ -2,7 +2,7 @@ package com.reza;
 
 import java.io.*;
 
-public class TextToImage {
+public class ToImage {
     private String imgDataString = "";
 
     public void convert(File inputFIle, String imgOutputFileName, String separator) {
@@ -18,7 +18,7 @@ public class TextToImage {
             byte[] imgDataByte = new byte[dataArray.length];
             for (int i = 0; i < dataArray.length; i++) imgDataByte[i] = Byte.parseByte(dataArray[i]);
             reader.close();
-            
+
             //write the data to the output file
             File outputFile = new File(imgOutputFileName);
             if (!outputFile.exists()) outputFile.createNewFile();

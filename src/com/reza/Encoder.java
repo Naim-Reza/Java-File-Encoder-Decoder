@@ -1,9 +1,8 @@
 package com.reza;
 
-import javax.imageio.stream.ImageInputStream;
 import java.io.*;
 
-public class ImageToText {
+public class ToText {
     private String encodedString = "";
 
     public String convertToString(File inputFile) {
