@@ -13,6 +13,7 @@ public class ImageToText {
             byte[] imageData = new byte[fileSize];
             reader.read(imageData);
             for (int i = 0; i < imageData.length; i++) encodedString += (Byte.toString(imageData[i]) + ":");
+            reader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
