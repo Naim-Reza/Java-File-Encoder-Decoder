@@ -14,7 +14,7 @@ public class Main {
         System.out.println(convertedString);
 
         //write the string to a file
-        //imageToText.writeFile(outputFileName);
+        //imageToText.writeFile(outputFileName, convertedString);
 
     }
 }
