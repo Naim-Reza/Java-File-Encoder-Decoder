@@ -25,14 +25,15 @@ public class Main {
         decoder.convert(textInputFile, imgOutputFileName, separator);
 
         //use of base64 encoding
-        String base64OutputFileName = "cat_out_base64";
+        String base64OutputFileName = "cat_out_base64.txt";
         Base64Processor base64Processor = new Base64Processor();
 
         //encode the image file and saves as a text file
         base64Processor.encode(inputFile, base64OutputFileName);
 
         //decode base64 encoded file and save as image
-        base64Processor.decode(base64OutputFileName);
+        String outputFilename = "cat_out_base64.jpg";
+        base64Processor.decode(base64OutputFileName, outputFilename);
 
 
     }

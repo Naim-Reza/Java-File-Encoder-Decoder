@@ -33,9 +33,8 @@ public class Base64Processor {
         }
     }
 
-    public void decode(String fileName){
-        String inputFileName = fileName + txtExt;
-        File file = new File(inputFileName);
+    public void decode(String fileName, String outputFileName){
+        File file = new File(fileName);
         String dataString = "";
 
         try{
@@ -46,8 +45,8 @@ public class Base64Processor {
             //convert string to byte array
             byte[] imgData = Base64.getDecoder().decode(dataString);
 
-            //write to a image file
-            this.writeToBinary(fileName,imgData);
+            //write to corresponding file
+            this.writeToBinary(outputFileName,imgData);
             reader.close();
 
         } catch (FileNotFoundException e){
@@ -59,10 +58,9 @@ public class Base64Processor {
 
 
     private void writeToText(String fileName, String outputString){
-        String outputFileName = fileName + txtExt;
 
         try{
-            FileWriter writer = new FileWriter(outputFileName);
+            FileWriter writer = new FileWriter(fileName);
             writer.write(outputString);
         } catch (IOException e) {
             e.printStackTrace();
@@ -70,8 +68,7 @@ public class Base64Processor {
     }
 
     private void writeToBinary(String fileName, byte[] bytes){
-        String outputFileName = fileName + imgExt;
-        File file = new File(outputFileName);
+        File file = new File(fileName);
 
         try{
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(file));
